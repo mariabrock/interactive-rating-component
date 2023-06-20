@@ -17,12 +17,14 @@
       href="./images/favicon-32x32.png"
     />
 
+    <script type="module" src="./main.js"></script>
+
     <title>Frontend Mentor | Interactive rating component</title>
   </head>
   <body>
     <div class="container">
       <!-- Rating state start -->
-      <div class="rating-start">
+      <div class="rating-state">
         <div>
           <img src="../images/icon-star.svg" alt="icon of a star" />
         </div>
@@ -41,12 +43,12 @@
           <div class="btn-circle">5</div>
         </div>
 
-        <button class="btn btn-submit">SUBMIT</button>
+        <button class="btn btn-submit" onClick="switchFunc()">SUBMIT</button>
       </div>
       <!-- Rating state end -->
 
       <!-- Thank you state start -->
-      <div class="state-end">
+      <div class="thankyou-state" style="display: none">
         <img
           class="phone"
           src="../images/illustration-thank-you.svg"
