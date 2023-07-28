@@ -7,7 +7,6 @@ html, body {
     margin: 0;
     padding: 0;
     font-size: 15px;
-    display: block;
     background-color: black;
     color: hsl(217, 12%, 63%);
 }
@@ -15,21 +14,43 @@ html, body {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
-.rating-state, .thankyou-state {
-  display: flex;
-  flex-direction: column;
+#rating-state, #thankyou-state {
   align-self: center;
-  background-color: hsl(216, 12%, 8%);
-  margin: 1rem;
+  background-image: linear-gradient(hsl(213, 19%, 18%), hsl(216, 12%, 8%));
+  margin: 5rem;
   padding: 2rem;
   border-radius: 20px;
+  max-width: 400px;
 }
 
-.thankyou-state {
+#ratings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   text-align: center;
+}
+
+.rating {
+  background-color: hsl(213, 19%, 18%);
+  height: 25px;
+  width: 25px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 50%;
+}
+
+.rating:hover {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(213, 19%, 18%);
+  cursor: pointer;
+}
+
+#thankyou-state {
+  visibility: hidden;
 }
 
 h3 {
@@ -47,27 +68,12 @@ h3 {
   display: inline-block;
   border-radius: 50px;
   transition-duration: 0.4s;
-
-  .btn-submit :hover {
-    background-color: hsl(0, 0%, 100%);
-    color: hsl(25, 97%, 53%);
-  }
 }
 
-.ratings {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  text-align: center;
-}
-
-.btn-circle {
-  background-color: hsl(213, 19%, 18%);
-  height: 25px;
-  width: 25px;
-  padding: 1rem;
-  margin-top: 1.5rem;
-  border-radius: 50%;
+.btn-submit:hover {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(25, 97%, 53%);
+  cursor: pointer;
 }
 
 .phone {

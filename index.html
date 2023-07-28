@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,7 +24,7 @@
   <body>
     <div class="container">
       <!-- Rating state start -->
-      <div class="rating-state">
+      <div id="rating-state" display="block">
         <div>
           <img src="../images/icon-star.svg" alt="icon of a star" />
         </div>
@@ -35,26 +35,26 @@
           is appreciated to help us improve our offering!
         </p>
 
-        <div class="ratings">
-          <div class="btn-circle">1</div>
-          <div class="btn-circle">2</div>
-          <div class="btn-circle">3</div>
-          <div class="btn-circle">4</div>
-          <div class="btn-circle">5</div>
+        <div id="ratings">
+          <div class="rating" id="circle 1">1</div>
+          <div class="rating" id="circle 2">2</div>
+          <div class="rating" id="circle 3">3</div>
+          <div class="rating" id="circle 4">4</div>
+          <div class="rating" id="circle 5">5</div>
         </div>
 
-        <button class="btn btn-submit" onClick="switchFunc()">SUBMIT</button>
+        <button class="btn btn-submit" id="submit">SUBMIT</button>
       </div>
       <!-- Rating state end -->
 
       <!-- Thank you state start -->
-      <div class="thankyou-state" style="display: none">
+      <div id="thankyou-state">
         <img
           class="phone"
           src="../images/illustration-thank-you.svg"
           alt="illustration of a phone with receipt and credit card"
         />
-        <p>
+        <p id="selection-text">
           You selected
           <!-- Add rating here -->
           out of 5
