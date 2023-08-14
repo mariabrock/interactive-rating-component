@@ -1,43 +1,29 @@
-const ratingNumbers = document.getElementById("ratings");
-const submitBtn = document.getElementById("submit");
-const ratingCard = document.getElementById("rating-state");
-const thankYouCard = document.getElementById("thankyou-state");
-const selectionText = document.getElementById("selection-text");
+const ratingCard = document.querySelector('#rating-state')
+const thankYouCard = document.querySelector('#thankyou-state')
+ 
+ console.log("this works")
 
-  console.log("this works")
-  
-  function onSubmit(e) {
-    const ratingCard = document.getElementById("rating-state");
-    const thankYouCard = document.getElementById("thankyou-state");
-      if (thankYouCard.style.visibility === 'hidden' &&  ratingCard.style.visibility === 'visible') {
-        thankYouCard.style.visibility = 'visible';
-        ratingCard.style.visibility = 'hidden';
-      } else {
-        thankYouCard.style.visibility = 'hidden';
-        ratingCard.style.visibility = 'visible';
-      }
+  const ratings = document.querySelectorAll('.rating');
+  console.log(ratings);
+
+  ratings.forEach (rating => {
+    rating.addEventListener('click', function(e) {
+      ratings.forEach(r => r.classList.remove('active'));
+      e.target.classList.add('active');
+      console.log(e.target.innerHTML)
+    })
+  });
+
+
+  const submitBtn = document.querySelector('.btn-submit')
+  submitBtn.addEventListener('click', function(){
+
+    const selected = document.querySelector('.active');
+    if(selected === null) {
+      alert('Please select your rating.') 
+    } else {
+      thankYouCard.style.visibility = 'visible';
+      ratingCard.remove();
     }
-    document.getElementById('submit').onclick = onSubmit;
-    
-    // function handleClick(e)
-    // {
-    //     var sender = (e && e.target) || (window.event && window.event.srcElement);
-    //     if(sender.id == "test1")
-    //     {
-    //         showContent('message 1');
-    //     }
-    //     else if(sender.id == "test2")
-    //     {
-    //         showContent('message 2');
-    //     }
-    //     if(window.event)
-    //     {
-    //         window.event.returnValue = false;
-    //     }
-    //     return false;
-    // }
-    
-    // function showContent(msg)
-    // {
-    //     document.getElementById('content').innerHTML = msg;
-    // }
+
+  });
