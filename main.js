@@ -1,6 +1,6 @@
-const ratingCard = document.querySelector('#rating-state')
-const thankYouCard = document.querySelector('#thankyou-state')
- 
+const ratingCard = document.querySelector('#rating-state');
+const thankYouCard = document.querySelector('#thankyou-state');
+
  console.log("this works")
 
   const ratings = document.querySelectorAll('.rating');
@@ -22,8 +22,14 @@ const thankYouCard = document.querySelector('#thankyou-state')
     if(selected === null) {
       alert('Please select your rating.') 
     } else {
+      console.log(selected);
+      const targetDiv = document.getElementById('selection-text')
+      const userSelection = document.createElement('div');
+      userSelection.id = 'user-selection';
+      userSelection.innerText = `You selected ${selected.innerText} out of 5`;
+      console.log(userSelection.innerText);
+      targetDiv.appendChild(userSelection);
       thankYouCard.style.visibility = 'visible';
       ratingCard.remove();
     }
-
   });
